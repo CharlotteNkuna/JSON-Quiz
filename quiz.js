@@ -1,4 +1,4 @@
-var quiz = {
+var quiz = { // You create a quiz object to keep all your data and functions together (like a toolbox).
     // (A) PROPERTIES
     data: [
       { q: "What is the standard distance between the target and archer in Olympics?", o: ["50 meters", "70 meters", "100 meters", "120 meters"], a: 1 },
@@ -20,7 +20,7 @@ var quiz = {
       quiz.hWrap = document.getElementById("quizWrap");
   
       quiz.hQn = document.createElement("div");
-      quiz.hQn.id = "quizQn";
+      quiz.hQn.id = "quizQn"; //html question:Hq answers:n
       quiz.hWrap.appendChild(quiz.hQn);
   
       quiz.hAns = document.createElement("div");
@@ -37,15 +37,15 @@ var quiz = {
       quiz.hAns.innerHTML = "";
   
       q.o.forEach((optionText, i) => {
-        let radio = document.createElement("input");
+        let radio = document.createElement("input"); //create radio element using js.
         radio.type = "radio";
         radio.name = "quiz";
-        radio.id = "quizo" + i;
+        radio.id = "quizo" + i; //take the number of options(4) and make it butons
         quiz.hAns.appendChild(radio);
   
-        let label = document.createElement("label");
+        let label = document.createElement("label"); //creating label
         label.innerHTML = optionText;
-        label.setAttribute("for", "quizo" + i);
+        label.setAttribute("for", "quizo" + i); 
         label.dataset.idx = i;
         label.addEventListener("click", () => quiz.select(label));
         quiz.hAns.appendChild(label);
